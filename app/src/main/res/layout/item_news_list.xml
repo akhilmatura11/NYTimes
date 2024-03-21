@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="newsEntity"
+            type="com.newyork.times.domain.models.NewsEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingTop="@dimen/space_8"
+        android:paddingBottom="@dimen/space_8">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/item_news_image_layout"
+            android:layout_width="@dimen/scale_64"
+            android:layout_height="@dimen/scale_64"
+            android:layout_centerHorizontal="true"
+            android:elevation="@dimen/space_12"
+            app:cardCornerRadius="@dimen/space_40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/item_news_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/scale_64"
+                android:contentDescription="@{newsEntity.imageCaption}"
+                android:scaleType="centerCrop" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/item_news_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/space_8"
+            android:layout_marginEnd="@dimen/space_8"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{newsEntity.title}"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+            app:layout_constraintEnd_toStartOf="@id/item_news_detail_button"
+            app:layout_constraintStart_toEndOf="@id/item_news_image_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_news_author"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_4"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{newsEntity.byLine}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/item_news_published_date"
+            app:layout_constraintStart_toStartOf="@id/item_news_title"
+            app:layout_constraintTop_toBottomOf="@id/item_news_title"
+            app:layout_constraintVertical_bias="0.99" />
+
+        <TextView
+            android:id="@+id/item_news_published_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{newsEntity.publishedDate}"
+            app:layout_constraintBottom_toBottomOf="@id/item_news_author"
+            app:layout_constraintEnd_toEndOf="@id/item_news_title"
+            app:layout_constraintTop_toTopOf="@id/item_news_author"
+            app:layout_constraintVertical_bias="0.99" />
+
+        <ImageView
+            android:id="@+id/item_news_detail_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/get_details"
+            android:src="@drawable/arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

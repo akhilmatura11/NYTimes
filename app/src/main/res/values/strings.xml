@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NYTimes</string>
+    <string name="ny_times">New York Times</string>
+    <string name="most_popular">Most Popular</string>
+
+    <string name="retry_fetching_data">Retry fetching data.</string>
+    <string name="fetching_most_popular_news">Fetching most popular news…</string>
+    <string name="read_full_article_online"><u>Read Full Article online...</u></string>
+    <string name="get_details">Get details</string>
+</resources>

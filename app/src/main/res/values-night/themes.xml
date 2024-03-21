@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources> <!-- Base application theme. -->
+    <style name="Theme.NYTimes" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorOnPrimary">@color/onSurface</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorSecondaryVariant">@color/primary</item>
+        <item name="colorOnSecondary">@color/onSurface</item>
+        <!-- Status bar color. -->
+        <item name="android:colorPrimaryDark">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>
